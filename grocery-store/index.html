@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Grocery Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Online Grocery Store</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="profileLink">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cartLink">
+                            <i class="bi bi-cart"></i> Cart <span id="cartCount" class="badge bg-danger">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" id="logoutLink">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4" id="welcomeMessage">Welcome to Online Grocery Store</h1>
+        <div class="container mt-5">
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1>Fresh Groceries Delivered to Your Doorstep</h1>
+                <p>Shop the best organic and fresh produce, dairy, and bakery items in one place. Quality and convenience at its best.</p>
+                <a href="#productsContainer" class="btn btn-primary">Start Shopping</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://media.istockphoto.com/id/1413100418/photo/portrait-of-indian-couple-at-grocery-store-while-shopping.webp?a=1&b=1&s=612x612&w=0&k=20&c=n4lwMcf57jrVac6rOHH02CRv8bSazrELWXuuDNQ49F4=" alt="Fresh Groceries">
+            </div>
+        </div>
+    </div>
+        <!-- Shop by Category Section -->
+        <div class="category-section">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-container">
+                <button class="scroll-btn scroll-left">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <div class="categories-wrapper">
+                    <div class="categories">
+                        <div class="category-card">
+                            <img src="images/fruits.jpg" alt="Fruits">
+                            <h3>Fruits</h3>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/vegetables.jpg" alt="Vegetables">
+                            <h3>Vegetables</h3>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/dairy.jpg" alt="Dairy">
+                            <h3>Dairy</h3>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/bakery.jpg" alt="Bakery">
+                            <h3>Bakery</h3>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/snacks.jpg" alt="Snacks">
+                            <h3>Snacks</h3>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/beverages.jpg" alt="Beverages">
+                            <h3>Beverages</h3>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/household.jpg" alt="Household">
+                            <h3>Household</h3>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-btn scroll-right">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Popular Products Sections -->
+        <!-- Fruits Section -->
+        <div class="products-section">
+            <div class="section-header">
+                <h2 class="section-title">Popular Fruits</h2>
+                <a href="#" class="view-all">View All <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="products-container">
+                <button class="scroll-btn scroll-left" type="button">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <div class="products-wrapper">
+                    <div class="products-scroll" id="fruits-scroll">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+                <button class="scroll-btn scroll-right" type="button">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Vegetables Section -->
+        <div class="products-section">
+            <div class="section-header">
+                <h2 class="section-title">Fresh Vegetables</h2>
+                <a href="#" class="view-all">View All <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="products-container">
+                <button class="scroll-btn scroll-left" type="button">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <div class="products-wrapper">
+                    <div class="products-scroll" id="vegetables-scroll">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+                <button class="scroll-btn scroll-right" type="button">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Snacks Section -->
+        <div class="products-section">
+            <div class="section-header">
+                <h2 class="section-title">Popular Snacks</h2>
+                <a href="#" class="view-all">View All <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="products-container">
+                <button class="scroll-btn scroll-left" type="button">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <div class="products-wrapper">
+                    <div class="products-scroll" id="snacks-scroll">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+                <button class="scroll-btn scroll-right" type="button">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dairy Section -->
+        <div class="products-section">
+            <div class="section-header">
+                <h2 class="section-title">Dairy Products</h2>
+                <a href="#" class="view-all">View All <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="products-container">
+                <button class="scroll-btn scroll-left" type="button">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+                <div class="products-wrapper">
+                    <div class="products-scroll" id="dairy-scroll">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+                <button class="scroll-btn scroll-right" type="button">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Features Section -->
+    <div class="features-section">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <i class="bi bi-truck fs-1 text-primary"></i>
+                    <h4>Fast Delivery</h4>
+                    <p>Get your groceries delivered to your doorstep in no time.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-cart-check fs-1 text-success"></i>
+                    <h4>Quality Products</h4>
+                    <p>We ensure top-quality fresh produce and organic items.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-cash fs-1 text-warning"></i>
+                    <h4>Affordable Prices</h4>
+                    <p>Great value for money with competitive pricing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials-section">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p>"I love how fresh the groceries are and how quick the delivery is!"</p>
+                        <footer class="blockquote-footer">Ananya Sharma</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-6">
+                    <blockquote class="blockquote">
+                        <p>"Best online grocery service! Affordable and reliable!"</p>
+                        <footer class="blockquote-footer">Rahul Verma</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Products Section -->
+        <div class="row" id="productsContainer">
+            <!-- Products will be loaded here -->
+        </div>
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="container">
+                <div>
+                    <h5>GroMart</h5>
+                    <p>Fresh groceries delivered in minutes</p>
+                </div>
+                <div>
+                    <h5>Menu</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">My Orders</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Categories</h5>
+                    <ul>
+                        <li><a href="#">Fruits</a></li>
+                        <li><a href="#">Vegetables</a></li>
+                        <li><a href="#">Dairy & Eggs</a></li>
+                        <li><a href="#">Bread & Bakery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 GroMart. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">My Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="profileForm">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="profileName" class="form-label">Customer Name</label>
+                                <input type="text" class="form-control" id="profileName" disabled>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="profileAddress" class="form-label">Address</label>
+                            <textarea class="form-control" id="profileAddress" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="profileContact" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="profileContact">
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
+                            <button type="button" id="editProfileBtn" class="btn btn-primary me-2">Edit</button>
+                            <button type="submit" id="saveProfileBtn" class="btn btn-success d-none">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Your Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div id="cartItemsContainer">
+                                <!-- Cart items will be loaded here -->
+                                <div class="text-center py-5" id="emptyCartMessage">
+                                    <i class="bi bi-cart-x" style="font-size: 3rem;"></i>
+                                    <h5>Your cart is empty</h5>
+                                    <p>Start shopping to add items to your cart</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header bg-light">
+                                    <h5 class="mb-0">Order Summary</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Subtotal:</span>
+                                        <span id="cartSubtotal">$0.00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Tax (10%):</span>
+                                        <span id="cartTax">$0.00</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between fw-bold">
+                                        <span>Total:</span>
+                                        <span id="cartTotal">$0.00</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <button class="btn btn-primary w-100" id="checkoutBtn" disabled>Proceed to Checkout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Order Placed Successfully</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-success">Your order has been placed successfully!</p>
+                    <div id="orderDetails">
+                        <!-- Order details will be inserted here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/product-sections.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
