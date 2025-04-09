@@ -11,7 +11,7 @@ function addToCart(productId) {
     if (!cart[userId]) {
         cart[userId] = [];
     }
-    
+    console.log(cart);
     // Check if product already in cart
     const existingItem = cart[userId].find(item => item.productId === productId);
     
@@ -50,20 +50,32 @@ function updateCartDisplay() {
     if (!currentUser) return;
     
     const userCart = cart[currentUser.id] || [];
-    
     if (userCart.length === 0) {
         emptyCartMessage.classList.remove('d-none');
         emptyCartMessage.textContent = 'No product added';
         cartItemsContainer.innerHTML = 'No product added';
         checkoutBtn.disabled = true;
     } else {
-        emptyCartMessage.classList.add('d-none');
+        if(emptyCartMessage){
+            emptyCartMessage.classList.add('d-none');
+        }
+        
         
         let itemsHTML = '';
         let subtotal = 0;
         
         userCart.forEach(item => {
-            const product = products.find(p => p.id === item.productId);
+            let product = null;
+            if(item.productId.includes("fruit")){
+                product = fruitProducts.find(p => p.id === item.productId);
+            } else if(item.productId.includes("veg")){
+                product = vegetableProducts.find(p => p.id === item.productId); 
+            } else if(item.productId.includes("snack")){
+                product = snackProducts.find(p => p.id === item.productId);
+            } else {
+                product = dairyProducts.find(p => p.id === item.productId);
+            }
+            
             if (product) {
                 const itemTotal = product.price * item.quantity;
                 subtotal += itemTotal;
